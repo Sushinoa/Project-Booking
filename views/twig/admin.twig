@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>admin</title>
+    <link rel="stylesheet" href="/src/css/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="/src/css/main.css">
+    <link rel="stylesheet" href="/src/css/bootstrap-theme.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png">
+    <script type="text/template" id='Navy'>
+        <img class="img-thumbnail" src="<%=src%>" alt="Category">
+        <%=name%>
+    </script>
+
+    <script type="text/template" id='AdminContent'>
+        <%=name%>
+        <%=price%>
+        <img class="img-thumbnail dish" src="<%=src%>" alt="Pic">
+    </script>
+</head>
+<body>
+<header>
+    <a href="/">
+        <div><img src="../../images/logo2.png"></div>
+    </a>
+    <div class="avatar">
+        <div class="avatarimg">
+            <img class="img-circle" src="{{ user.avatar }}">
+        </div>
+        <div class="user">
+            {{ user.name }}
+        </div>
+    </div>
+    <div class="buttons">
+        <a href="/" class="">
+            <button class="btn btn-info btn-lg">Главная</button>
+        </a>
+        <a href="/user/logout" class="">
+            <button class="btn btn-info btn-lg">Выйти</button>
+        </a>
+    </div>
+</header>
+
+<main data-role="main" class="adminpanel">
+</main>
+
+
+<div id="grid"></div>
+<div id="paginator"></div>
+
+
+<footer>
+    <div></div>
+    <img src="../../images/MerryChristmas.jpg" name="snowbutton" TYPE="button" onclick="$('body').snowFall();"
+         title="MerryChristmas" class="snowbutton">
+    {#<div>#}
+    {#<h2>© SunNY</h2>#}
+    {#</div>#}
+    <div class="ver">
+        ver 9.0
+    </div>
+
+</footer>
+
+<script type="text/html" id="dashboard-tpl">
+    {% include '-dashboard.ejs' %}
+</script>
+
+<script type="text/html" id="grid-tpl">
+    {% include '-grid.ejs' %}
+</script>
+
+<script type="text/html" id="editor-tpl">
+    {% include '-editor.ejs' %}
+</script>
+
+
+<script src="/src/js/libs/jquery-2.2.4.js"></script>
+<script src="/src/js/libs/underscore.js"></script>
+<script src="/src/js/libs/bootstrap.min.js"></script>
+<script src="/src/js/libs/backbone.js"></script>
+<script src="/src/js/main.js"></script>
+<script src="/src/js/app.js"></script>
+<script src="/build/jst.js"></script>
+
+<script src="/src/js/views/GridView.js"></script>
+<script src="/src/js/views/EditorView.js"></script>
+<script src="/src/js/views/DashboardView.js"></script>
+<script src="/src/js/views/LayoutView.js"></script>
+
+<script src="/src/js/routes/NavyRoute.js"></script>
+<script src="/src/js/run.js"></script>
+<script src="/src/js/snow.js"></script>
+
+<div class="alert"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+{% extends 'index.twig' %}
+
+{% block home %}
+
+    <div class="flexbox1">
+        {% include 'top.twig' with {'roomList': roomList } %}
+    </div>
+{% endblock %}

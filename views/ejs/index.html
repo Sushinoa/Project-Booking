@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>admin</title>
+    <link rel="stylesheet" href="../../src/css/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="../../src/css/main.css">
+
+    <script type="text/template" id='Navy'>
+        <img class="img-thumbnail" src="<%=src%>" alt="Category">
+        <%=name%>
+    </script>
+
+    <script type="text/template" id='AdminContent'>
+        <%=name%>
+        <%=price%>
+        <img class="img-thumbnail dish" src="<%=src%>" alt="Pic">
+    </script>
+</head>
+<body>
+
+<header>
+    <div><img src="../../images/logo2.png"></div>
+    <div class="avatar">
+        <div class="avatarimg">
+            <img class="img-circle" src="http://livegroups.ru/upload/000/u1/032/797af329.jpg">
+        </div>
+        <div class="user">
+            admin
+        </div>
+    </div>
+    <div class="buttons">
+        <a href="" class=""><button class="btn btn-info btn-lg">Выйти</button></a>
+    </div>
+</header>
+
+<main>
+
+    <div class="adminpanel" id="adminpanel">
+        <div class="adminnav">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class ="row menu"></div>
+                </div>
+            </div>
+        </div>
+
+    <ul class="admincontent">
+    </ul>
+    </div>
+
+</main>
+
+<footer>
+    <div></div>
+    <div>
+        <h2>© Sunny</h2>
+    </div>
+    <div class="ver">
+        ver 3.4
+    </div>
+
+
+</footer>
+
+
+<script src="../../src/js/libs/jquery-3.1.1.min.js"></script>
+<script src="../../src/js/libs/underscore.js"></script>
+<script src="../../src/js/libs/bootstrap.min.js"></script>
+<script src="../../src/js/libs/backbone.js"></script>
+<script src="../../src/js/main.js"></script>
+
+<script src="../../src/js/app.js"></script>
+
+<script src="../../src/js/routes/NavyRoute.js"></script>
+<script src="../../src/js/run.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>

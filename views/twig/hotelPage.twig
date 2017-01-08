@@ -1,0 +1,19 @@
+{% for object in hotelList %}
+
+    <div class="thumbnail">
+        <a href="/hotels/id{{ object.id_hotel }}">
+
+            <h4>{{ object.title }}</h4>
+            <h4 style="color: #ffcb00">{{ object.stars }}</h4>
+            <img src="{{ object.image }}" alt="Foto hotel">
+        </a>
+        <a href="/hotels/id{{ object.id_hotel }}">
+            <button class="btn">Показать</button>
+        </a>
+    </div>
+
+
+
+{% endfor %}
+
+    {% include 'pagination.twig' %}

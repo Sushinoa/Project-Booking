@@ -1,0 +1,36 @@
+[
+  {
+    "name": "dashboard",
+    "src": "http://s1.iconbird.com/ico/2013/9/450/w256h2561380453888Documents256x25632.png",
+    "categoryname": "dashboard"
+  },
+  {
+    "name": "hotels",
+    "src": "http://s1.iconbird.com/ico/2014/1/618/w128h1281390853631hotel128.png",
+    "categoryname": "hotels",
+    "grid_options": "TODO здесь описание колонок для GridView",
+    "editor_options": ["name", "type", "price"]
+  },
+  {
+    "name": "apartments",
+    "src": "http://s1.iconbird.com/ico/2014/1/585/w128h1281390640440towel128.png",
+    "categoryname": "apartments",
+    "grid_options": "TODO здесь описание колонок для GridView",
+    "editor_options": "TODO здесь описание полей формы для EditorView"
+  },
+  {
+    "name": "requests",
+    "src": "http://s1.iconbird.com/ico/0612/GooglePlusInterfaceIcons/w128h1281338911594list.png",
+    "categoryname": "orders",
+    "grid_options": "TODO здесь описание колонок для GridView",
+    "editor_options": "TODO здесь описание полей формы для EditorView"
+  },
+  {
+    "name": "users",
+    "src": "http://s1.iconbird.com/ico/2013/9/450/w256h2561380453931UserAccounts256x25632.png",
+    "categoryname": "users",
+    "grid_options": "TODO здесь описание колонок для GridView",
+    "editor_options": "TODO здесь описание полей формы для EditorView"
+
+  }
+]

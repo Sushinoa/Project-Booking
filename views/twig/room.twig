@@ -1,0 +1,34 @@
+{% extends 'index.twig' %}
+
+{% block room %}
+    <div class="review">
+        <div id="gallery">
+            <div id="panel">
+                <!--565x280-->
+                <img id="largeImage" src="{{ roomId.foto }}"/>
+
+            </div>
+            <div id="thumbs">
+                <!--100x100-->
+                <img src="{{ roomId.foto }}" alt="1st image description"/>
+                {% for room in roomFoto %}
+                    <!--100x100-->
+                    <img src="{{ room.src }}" alt="1st image description"/>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="info">
+            <h1 style="color:#2f96bb">{{ roomId.type }}</h1>
+            <h3>{{ roomId.price }} ₴ </h3>
+            <div class="roomreview">
+                {{ roomId.description }}
+            </div>
+            <a href="#modal_orderX" class="open_modal">
+                <button class="orderID btn btn-success open_modal" value="/order/add/id{{ roomId.id_apartment }}">
+                    Заказать
+                </button>
+            </a>
+
+        </div>
+    </div>
+{% endblock %}

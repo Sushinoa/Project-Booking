@@ -1,0 +1,123 @@
+<ol class="GridString">
+<% if (entity == 'hotels') { %>
+<a class="btn btn-primary gridbtn" href="admin#<%=entity%>/add">Добавить <%=entity%></a>
+<% _.each (collection, function (object) { %>
+<li>
+    <div class="gridtext">
+        <a href="admin#<%= entity %>/edit/<%= object.id_hotel %>">
+        <img src="<%= object.image %>">
+            <%= object.title %>,
+            <%= object.stars %>
+        </a>
+    </div>
+    <div class="actionbtn">
+        <button class="btn btn-danger delete"  data-entity="<%= entity.slice(0, -1) %>"
+                                    data-item="<%= object.id_hotel %>">Удалить</button>
+
+        <a class="btn btn-primary"
+           data-entity="<%= entity %>"
+           href="admin#<%=entity%>/edit/<%= object.id_hotel %>">
+           Редактировать
+        </a>
+    </div>
+</li>
+<% }); %>
+<% } %>
+
+<% if (entity == 'users') { %>
+<a class="btn btn-primary gridbtn" href="admin#<%=entity%>/add">Добавить <%=entity%></a>
+<% _.each (collection, function (object) { %>
+<li>
+    <div>
+        <a href="admin#<%= entity %>/edit/<%= object.id_user %>">
+        <img class="img-circle" src="<%= object.avatar%>">
+        <%= object.name%>,
+        <%= object.email%>
+        </a>
+    </div>
+    <div>
+        <div class="actionbtn">
+            <button     class="btn btn-danger delete"
+                        data-entity="<%= entity.slice(0, -1) %>"
+                        data-item="<%= object.id_user %>">Удалить</button>
+
+            <a class="btn btn-primary"
+               data-entity="<%= entity %>"
+               href="admin#<%=entity%>/edit/<%= object.id_user %>">
+                Редактировать
+            </a>
+        </div>
+    </div>
+</li>
+<% }); %>
+<% } %>
+
+<% if (entity == 'requests') { %>
+<a class="btn btn-primary gridbtn" href="admin#<%=entity%>/add">Добавить <%=entity%></a>
+<% _.each (collection, function (object) { %>
+<li>
+    <div class="gridtext">
+        <a href="admin#<%= entity %>/edit/<%= object.id_request %>">
+        <%= object.date_arrival%>:
+        <%= object.date_departure%>,
+        <%= object.name%>,
+        <%= object.email%>,
+        <%= object.phone%>
+        <%= object.comment%>
+        </a>
+    </div>
+        <div class="actionbtn">
+           <button class="btn btn-danger delete"     data-entity="<%= entity.slice(0, -1) %>"
+                                                     data-item="<%= object.id_request %>">Удалить</button>
+            <a class="btn btn-primary"
+               data-entity="<%= entity %>"
+               href="admin#<%=entity%>/edit/<%= object.id_request%>">
+                Редактировать
+            </a>
+         </div>
+</li>
+<% }); %>
+<% } %>
+
+
+<% if (entity == 'apartments') { %>
+<a class="btn btn-primary gridbtn" href="admin#<%=entity%>/add">Добавить <%=entity%></a>
+<% _.each (collection, function (object) { %>
+<li>
+    <div>
+        <a href="admin#<%= entity %>/edit/<%= object.id_apartment %>">
+        <img src="<%= object.foto%>">
+        <%= object.title%>:
+        <%= object.price%>₴,
+        <%= object.size%>,
+        <%= object.type%>
+    </a>
+
+    </div >
+    <div class="actionbtn">
+        <button class="btn btn-danger delete"    data-entity="<%= entity.slice(0, -1) %>"
+                                                 data-item="<%= object.id_apartment %>">Удалить</button>
+        <a class="btn btn-primary"
+           data-entity="<%= entity %>"
+           href="admin#<%=entity%>/edit/<%= object.id_apartment%>">
+            Редактировать
+        </a>
+    </div>
+
+</li>
+<% }); %>
+<% } %>
+
+<% if (collection.length == 0) { %>
+<li>Нет записей <%= entity %></li>
+<% } %>
+</ol>
+
+<% if (collection.length > 0) { %>
+<div class="paginator">
+    <% var pages = Math.ceil(total / limit) %>
+    <% for (var i = 1; i <= pages; i++) { %>
+        <a href="#" data-page="<%= i %>"><%= i %></a>
+    <% } %>
+</div>
+<% } %>

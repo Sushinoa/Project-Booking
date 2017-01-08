@@ -1,0 +1,603 @@
+body {
+    max-width: 2300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    /*background: lightblue;*/
+    background: linear-gradient(to left, lightblue, #f1da36);
+    width: 100%;
+    height: 90px;
+}
+
+header img {
+    width: 220px;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    width: 100%;
+    flex-grow: 1;
+}
+
+.flexbox1 {
+    /*width: 90%;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flexbox1 a button{
+    width: 100%;
+}
+
+.thumbnail {
+    margin-top: 15px;
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+}
+
+.thumbnail img{
+    max-height: 280px;
+}
+
+.thumbnail a:nth-child(1) {
+    flex-grow: 1;
+}
+
+.thumbnail a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #2f96b4;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin-left: 20px;
+}
+
+.info button {
+    width: 140px;
+    height: 60px;
+}
+
+.roomreview {
+    flex-grow: 1;
+
+}
+
+.low {
+    width: 40%;
+    height: 40%;
+}
+
+nav {
+    width: 100%;
+}
+
+.buttons a {
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.modal-footer{
+    display: flex;
+}
+
+.hotel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.review {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+li {
+    list-style-type: none;
+}
+
+footer {
+    background: lightblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 40px;
+    width: 100%;
+}
+
+/*Пагинация Отели (юзер)*/
+
+.pagination {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    color: red;
+}
+
+.pagination li {
+    border: 2px solid dodgerblue;
+    margin: 15px 0px 0px 10px;
+    padding: 5px;
+}
+
+.pagination li:hover a {
+    color: #ffffff;
+}
+
+.pagination li:hover {
+    background: dodgerblue;
+    border: 2px solid #fff;
+}
+
+/*Модальные*/
+
+.modal_div {
+    width: 300px;
+    height: 330px;
+    border-radius: 5px;
+    background: #fff;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -150px;
+    display: none;
+    opacity: 0;
+    z-index: 5;
+    padding: 3px 10px;
+}
+
+ul {
+    margin: 0;
+}
+/*.notice{*/
+    /*display: block;*/
+    /*width: 300px;*/
+    /*height: 20px;*/
+    /*color: grey;*/
+/*}*/
+/*+Модальные окна*/
+
+#modal_pwd {
+    height: auto;
+}
+
+#modal_orderX {
+    height: auto;
+    margin-top: -190px;
+}
+
+/*#modal_orderY {*/
+    /*height: 420px;*/
+/*}*/
+
+.modal_div .modal_close {
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    display: block;
+}
+/* Пoдлoжкa */
+#overlay {
+    z-index:3;
+    position:fixed;
+    background-color:#000;
+    opacity:0.8;
+    -moz-opacity:0.8;
+    filter:alpha(opacity=80);
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    cursor:pointer;
+    display:none;
+}
+
+/*Галлерея*/
+
+#gallery {
+    min-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#thumbs {
+    padding-top: 10px;
+    overflow: hidden;
+    display: flex;
+}
+
+#thumbs img, #largeImage {
+    border: 1px solid gray;
+    padding: 4px;
+    background-color: white;
+    cursor: pointer;
+}
+
+#thumbs img {
+    float: left;
+    margin-right: 6px;
+    width: 100px;
+    height: 100px;
+    min-width: 50px;
+}
+
+#panel img {
+    width: 600px;
+    height: 420px;
+}
+
+/*-Модальные окна*/
+
+textarea {
+    max-height: 45px;
+    max-width: 210px;
+}
+
+/*К А Б И Н Е Т*/
+.cabinet {
+    width: 90%;
+    display: flex;
+}
+
+.cabinetinfo {
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.cabinetinfo button {
+    margin-top: 20px;
+}
+
+.cabinetimg {
+    height: 240px;
+    border-radius: 15px;
+    background: url(../../images/none.png) no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.img-circle {
+    background: url(../../images/none.png) no-repeat;
+    background-size: cover;
+    min-width: 55px
+}
+
+.cabinetrequest {
+    flex-grow: 2;
+}
+
+.cabinetrequest li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.cabinetrequest li p {
+    width: 100%;
+}
+
+/*А Д М И Н К А*/
+
+.avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar img {
+    width: 60px;
+    height: 60px;
+}
+
+/*.adminpanel {*/
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+    /*width: 90%;*/
+    /*padding: 10px;*/
+/*}*/
+
+.gridbtn {
+    margin-top: 25px;
+}
+
+#sidebar {
+    min-width: 200px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+#sidebar a{
+    margin-top: 10px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#sidebar a:hover {
+    background: lightblue;
+    border-radius: 5px;
+}
+
+#sidebar a:focus {
+    background: #7ab5d3;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+#sidebar img {
+    width: 25px;
+    height: 25px;
+}
+
+#content {
+    flex-grow: 2;
+    border-radius: 5px;
+    min-height: 77.9vh;
+}
+
+.GridString li {
+    list-style-type: decimal;
+    padding: 5px;
+    margin-top : 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid lightblue;
+    border-radius: 5px;
+}
+
+.GridString img {
+    height: 55px;
+    border-radius: 5px;
+}
+
+.actionbtn {
+    min-width: 210px;
+}
+
+.dashboardblock {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboardblock ul {
+    width: 95%;
+}
+
+.editbox {
+    display: flex;
+    width: 80%;
+}
+
+.editbox article {
+    width: 20%;
+}
+
+.editbox textarea {
+    min-width: 40%;
+    min-height: 120px;
+    max-height: 405px;
+    max-width: 250px;
+}
+.editbox button {
+    margin-top: 15px;
+}
+
+.dashboardblock ul li:nth-of-type(2n) {
+    background: #c4e3f3;
+}
+
+.dashboardbtn {
+    display: flex;
+    width: 95%;
+    margin-top: 25px;
+}
+
+.alert {
+    opacity: 0;
+    transition: opacity 1.5s;
+    position: fixed;
+    width: 30vw;
+    top: 15vh;
+    margin: auto;
+}
+
+.alert[class*=alert-] {
+    opacity: 1;
+}
+.dashboardbtn1 {
+    display: flex;
+}
+
+.editbtn {
+    margin-top: 15px;
+}
+
+.img-circle {
+    background: url(../../images/none.png) no-repeat 50% 50%;
+    background-size: cover;
+    min-width: 55px
+}
+
+.dashboardbtn1 button {
+    margin-right: 5px;
+}
+
+.StarsBox{
+    width: 200px;
+    display: flex;
+}
+
+.paginator {
+    display: flex;
+    justify-content: center;
+}
+
+.paginator a {
+    margin: 15px 0px 0px 10px;
+    padding: 5px;
+    border: 2px solid dodgerblue;
+}
+
+.paginator a:hover {
+    color: #ffffff;
+    background: dodgerblue;
+    border: 2px solid #fff;
+}
+
+/*Выбор количества звезд в админке ★ ✰*/
+
+.labelStars {
+    cursor: pointer;
+}
+.inputStars[type=radio] {
+    display: none;
+}
+
+.labelStars:before {
+    content: "★";
+    font-size: 200%;
+}
+
+.inputStars:checked ~ .labelStars:before {
+    content: '✰';
+}
+
+
+@media only screen and (max-width: 900px), only screen and (max-device-width: 900px) {
+    .review {
+        display: flex;
+        flex-direction: column;
+    }
+    .info {
+        width:100%;
+        margin: 0;
+    }
+    .hotel {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
+
+@media only screen and (max-width: 600px), only screen and (max-device-width: 600px) {
+    main {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #sidebar img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .review {
+        display: flex;
+        flex-direction: column;
+    }
+    .info {
+        width:100%;
+        margin: 0;
+    }
+    .content {
+        display: flex;
+        flex-direction: row;
+    }
+    .thumbnail {
+        width: 40%;
+    }
+    .editbox {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    .adminpanel {
+        display: flex;
+        flex-direction: column;
+    }
+    #sidebar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: auto;
+        height: auto;
+    }
+    #sidebar a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cabinet {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cabinetinfo {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .cabinetinfo article{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 250px), only screen and (max-device-width: 250px) {
+    .flexbox1 {
+        width: 80%;
+        padding: 0px;
+    }
+
+    .thumbnail {
+        width: 60%;
+        height: 400px;
+        margin: 0px;
+    }
+}
+
+.snowbutton {
+    cursor: help;
+}
+
+
+

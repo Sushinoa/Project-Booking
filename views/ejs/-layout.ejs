@@ -1,0 +1,20 @@
+<ul id="sidebar">
+    <a href="#"><img src="http://s1.iconbird.com/ico/2013/9/450/w256h2561380453888Documents256x25632.png">Dashboard</a>
+
+    <% _.each (APP.config.entities, function (config, name) { %>
+        <a href="#<%= name %>">
+        <img src=<%=config.img%>>
+            <%= config.title %>
+        </a>
+    <% }) %>
+</ul>
+<div id="content">
+    <!--TODO здесь выводится:-->
+    <!--TODO dashboard.ejs:-->
+    <!--TODO grid.ejs:-->
+    <!--TODO editor.ejs:-->
+</div>
+
+<!--
+TODO  1. добавить обратку кликов по ли в НавиВью
+-->

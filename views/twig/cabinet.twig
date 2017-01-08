@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking</title>
+    <link rel="stylesheet" href="../../src/css/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="../../src/css/main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png">
+
+</head>
+<body>
+
+<header>
+    <a href="/">
+        <div><img src="../../images/logo2.png"></div>
+    </a>
+    <div class="buttons">
+        <!--Начало Кнопка Выход-->
+
+        <a href="/user/logout" class="">
+            <button id="pwd" class="btn btn-info btn-lg">Выйти</button>
+        </a>
+        <!--Конец Кнопка Выход-->
+    </div>
+</header>
+
+<nav>
+
+    <ul class="nav nav-tabs">
+        <li id="btn1" class=""><a href="/">Домой</a></li>
+        <li id="btn2"><a href="/hotels/page1">Отели</a></li>
+
+    </ul>
+
+</nav>
+
+<main id="content">
+
+    <div class="cabinet">
+        <div class="cabinetinfo">
+            <img class="cabinetimg" src="{{ user.avatar }}">
+            <article>Имя: {{ user.name }}</article>
+            <article>Логин: {{ user.email }}</article>
+            <a href="#modal_pwd" class="open_modal">
+                <button id="pwd" class="btn btn-info btn-lg">Редактировть профиль</button>
+            </a>
+
+        </div>
+
+        <div class="cabinetrequest">
+
+            <ol class="GridString">
+                {% if orders == true %}
+                    {% for order in orders %}
+                        <li>
+                            <p>Номер заявки на бронирование:{{ order.id_request }} </p>
+                            <p>Дата подачи заявки:{{ order.date_request }}</p>
+                            {% for room in rooms if room.id_apartment == order.id_apartment %}
+
+                                <p>Название отеля:{{ room.title }}</p>
+                                <p>Тип номера:{{ room.type }}</p>
+                            {% endfor %}
+
+                        </li>
+
+                    {% endfor %}
+                {% else %}
+                    <h4>У Вас ещё нет заказов!</h4>
+                {% endif %}
+            </ol>
+
+        </div>
+    </div>
+</main>
+<footer>
+    <div></div>
+    <div>
+        <h2>© Sunny</h2>
+    </div>
+    <div class="ver">
+        ver 9.0
+    </div>
+
+</footer>
+<!--НАЧАЛО МОДАЛЬНЫЕ ОКНА-->
+<!--Модальное Редактирование персональных данных-->
+<div id="modal_pwd" class="modal_div editform">
+    <span class="modal_close">X</span>
+    <div class="modal-header">
+        <h4 class="modal-title">Редактирование данных</h4>
+    </div>
+    {% include 'edit-Userform.twig' %}
+
+</div>
+<!-- Пoдлoжкa, oднa нa всю стрaницу -->
+<div id="overlay"></div>
+<!--КОНЕЦ МОДАЛЬНЫЕ ОКНА-->
+
+<script src="../../src/js/libs/jquery-2.2.4.js"></script>
+<script src="../../src/js/libs/underscore.js"></script>
+<script src="../../src/js/libs/bootstrap.min.js"></script>
+<script src="../../src/js/libs/backbone.js"></script>
+<script src="../../src/js/main.js"></script>
+<script src="../../src/js/data.js"></script>
+</body>
+</html>

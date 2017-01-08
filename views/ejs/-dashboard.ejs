@@ -1,0 +1,40 @@
+<% if (collection.length == 0) { %>
+<li>Нет записей <%= entity %></li>
+<% } %>
+
+<% _.each (collection, function (array, index) { %>
+
+<li class="dashboardblock">
+    <h5><%= APP.config.entities[index].title %></h5>
+    <ul>
+        <% _.each(array, function (category) { %>
+        <li >
+            <div>
+                <a href="#<%= index + '/edit/' + category[APP.config.entities[index].id] %>">
+                    <%= category.title %>
+                    <%= category.name%>
+                    <%= category.type%>
+                    <%= category.email%>
+                </a>
+            </div>
+            <div class="dashboardbtn1">
+                    <button class="btn btn-danger delete"
+                            type="button"
+                            data-entity="<%= index %>"
+                            data-item="<%= category[APP.config.entities[index].id] %>">
+                            Удалить
+                    </button>
+                <a class="btn btn-primary" href="#<%= index %>/edit/<%= category[APP.config.entities[index].id] %>">Редактировать</a>
+            </div>
+        </li>
+        <% }) %>
+    </ul>
+
+    <div class="dashboardbtn">
+        <a class="btn add"   href="admin#<%= APP.config.entities[index].ipm%>/add"   data-grid="<%= APP.config.entities[index].ipm %>">Добавить</a>
+        <a class="btn"       href="admin#<%= APP.config.entities[index].ipm%>"       data-grid="<%= APP.config.entities[index].ipm %>">Весь список</a>
+    </div>
+</li>
+<% }) %>
+
+

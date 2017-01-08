@@ -1,0 +1,59 @@
+<div class="hotellist dash"><h4>Список отелей</h4>
+    <div id="hotels">
+        <script id="hotelsTemplate" type="text/template">
+
+            <%= name %>
+            <%= stars %>
+            <img src="<%= photo %>" alt="<%= name %>" />
+            <button>Редактировать</button>
+            <button>Удалить</button>
+
+        </script>
+    </div>
+    <button>Все отели</button>
+    <button>Добавить отель</button>
+
+</div>
+<div class="roomlist dash"><h4>Список номеров</h4>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <button>Все номера</button>
+    <button>Добавить номер</button>
+</div>
+<div class="orderlist dash"><h4>Список заказов</h4>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <button>Все заказы</button>
+    <button>Добавить заказ</button>
+</div>
+<div class="userlist dash"><h4>Список пользователей</h4>
+    <div id="contacts">
+        <script id="contactTemplate" type="text/template">
+
+            <%= name %>
+            <%= stars %>
+            <img src="<%= photo %>" alt="<%= name %>" />
+            <button>Редактировать</button>
+            <button>Удалить</button>
+
+        </script>
+    </div>
+    <button>Все пользователи</button>
+    <button>Добавить пользователя</button>
+</div>
+</div>
+
+<script src="../../src/js/libs/jquery-3.1.1.min.js"></script>
+<script src="../../src/js/libs/underscore.js"></script>
+<script src="../../src/js/libs/bootstrap.min.js"></script>
+<script src="../../src/js/libs/backbone.js"></script>
+<script src="../../src/js/main.js"></script>
+<script src="../../src/js/Router.js"></script>
+<script src="../../src/js/DashboardUsers.js"></script>
+<script src="../../src/js/DashboardHotels.js"></script>

@@ -1,0 +1,56 @@
+{% extends 'index.twig' %}
+
+{% block hotelID %}
+    <div class="hotel">
+        <!--Начало Обзор отеля-->
+        <div class="review">
+            <div id="gallery">
+                <div id="panel">
+                    <!--565x280-->
+                    <img id="largeImage" src="{{ hotelItem.image }}"/>
+
+                </div>
+
+
+                <div id="thumbs">
+                    <img src="{{ hotelItem.image }}" alt="1st image description"/>
+                    {% for object in hotelsFoto %}
+                        <!--100x100-->
+                        <img src="{{ object.src }}" alt="1st image description"/>
+                    {% endfor %}
+                </div>
+
+            </div>
+            <div class="info">
+                <h1 style="color:#2f96bb ">{{ hotelItem.title }}</h1>
+                <h3 style="color: #ffcb00">{{ hotelItem.stars }}</h3>
+                <h3 style="color:#2f96bb">от {{ minPrice }} до {{ maxPrice }} ₴ </h3>
+
+                <div>
+                    {{ hotelItem.description }}
+                </div>
+            </div>
+        </div>
+        <!--Конец Обзор отеля-->
+        <div class="content">
+            <div class="flexbox1">
+                {% for object in hotelRooms %}
+
+                    <div class="thumbnail">
+                        <a href="/hotels/room/id{{ object.id_apartment }}" id="btn4">
+                            <h4>{{ object.type }}</h4>
+                            <img src="{{ object.foto }}" alt="Foto room">
+                        </a>
+                        <a href="#modal_orderX" class="open_modal">
+                            <button class="orderID btn open_modal" value="/order/add/id{{ object.id_apartment }}">
+                                Заказать
+                            </button>
+                        </a>
+
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

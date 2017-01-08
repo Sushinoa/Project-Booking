@@ -1,0 +1,22 @@
+<form class="login_form clearform" method="post" action="/user/login">
+    <div class="modal-body">
+        {% include 'user.twig' with {'errors': errors, 'result':result,'name':name } %}
+        <label>
+            <p>Введите логин:</p>
+            <input type="email" name="email" value="{{ email }}" class="btn" placeholder="Введите Ваш login" required>
+        </label>
+        <label>
+            <p>Введите пароль:</p>
+            <input minlength="2" type="password" name="password" value="{{ password }}" class="btn"
+                   placeholder="Введите Ваш пароль" required>
+        </label>
+    </div>
+    <p class="notice2"></p>
+    <div class="modal-footer">
+        <input type="submit" name="submit" value="Войти" class="btn">
+    </div>
+
+</form>
+
+
+

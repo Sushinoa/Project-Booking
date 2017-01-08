@@ -1,0 +1,90 @@
+<form  id="redactor" name="redactor">
+<% _.each (APP.config.entities[entity].editor, function (field, index) { %>
+
+<li class="editbox">
+    <article>
+    <h5><%= field.name %></h5>
+    </article>
+
+    <% if (field.form == "input") { %>
+
+        <input required
+               maxlength="<%= field.max %>"
+               value="<%= model[index] %>"
+               name="<%= index %>"
+               type="<%= field.type %>">
+
+    <% } else if (field.form == "selectstars") { %>
+    <div class="StarsBox">
+    <label class="labelStars" for="first-star"></label>
+    <input maxlength="<%= field.max %>" class="inputStars" value='★✰✰✰✰' id='first-star' type="radio" name='stars'/>
+    <label class="labelStars" for="second-star"></label>
+    <input maxlength="<%= field.max %>" class="inputStars" value='★★✰✰✰' id='second-star' type="radio" name='stars'/>
+    <label class="labelStars" for="third-star"></label>
+    <input maxlength="<%= field.max %>" class="inputStars" value='★★★✰✰' id='third-star' type="radio" name='stars'/>
+    <label class="labelStars" for="fourth-star"></label>
+    <input maxlength="<%= field.max %>" class="inputStars" value='★★★★✰' id='fourth-star' type="radio" name='stars'/>
+    <label class="labelStars" for="fifth-star"></label>
+    <input maxlength="<%= field.max %>" class="inputStars" value='★★★★★' id='fifth-star' type="radio" name='stars' checked/>
+    </div>
+
+    <% } else if (field.form == "radio" && model[index] == 1) { %>
+    <div>
+        <input type="text" value="1" name="<%= index %>">
+        <!--<input required type="radio" name="<%= index %>" value="1" checked> Да<Br>-->
+        <!--<input required type="radio" name="<%= index %>" value="0"> Нет-->
+    </div>
+
+    <% } else if (field.form == "radio" && model[index] == 0) { %>
+    <div>
+        <input type="text" value="0" name="<%= index %>">
+        <!--<input type="radio" name="<%= index %>" value="1"> Да<Br>-->
+        <!--<input type="radio" name="<%= index %>" value="0" checked> Нет-->
+    </div>
+
+    <% } else if (field.form == "radio") { %>
+    <div>
+        <input type="text"name="<%= index %>">
+        <!--<input type="radio" name="<%= index %>" value="1"> Да<Br>-->
+        <!--<input type="radio" name="<%= index %>" value="0"> Нет-->
+    </div>
+
+    <% } else if (field.form == "checkbox" && field.is_approved == "1") { %>
+    <input type="checkbox" name="<%= index %>" value="1">
+
+    <% } else if (field.form == "checkbox" && field.is_approved == "0") { %>
+    <input type="checkbox" name="<%= index %>" value="0">
+
+    <% } else if (field.form == "date") { %>
+    <input required value="<%= model[index] %>" type="date" name="<%= index %>">
+
+    <% } else if (field.form == "avatar") { %>
+    <input accept="image/jpeg,image/png,image/jpg" type="file" name="<%= index %>" src="<%= model[index] %>">
+
+    <% } else if (field.form == "image") { %>
+    <div>
+    <img src = "<%= model[index] %>">
+    <input accept="image/jpeg,image/png,image/jpg" type="file" name="<%= index %>" src="<%= model[index] %>">
+    </div>
+
+    <% } else if (field.form == "foto") { %>
+    <input accept="image/jpeg,image/png,image/jpg" type="file" name="<%= index %>" src="<%= model[index] %>">
+
+    <% } else if (field.form == "textarea") { %>
+          <textarea required maxlength="<%= field.max %>" name="<%= index%>" id="editTextarea"><%= model[index] %></textarea>
+
+    <% } else if (field.form == "email") { %>
+    <input required value="<%= model[index] %>" name="<%= index%>" type="email">
+    <% } %>
+
+
+
+</li>
+<% }); %>
+
+<button type="submit"
+        class="btn editbtn save"
+        data-role="save"
+        >Сохранить</button>
+</form>
+

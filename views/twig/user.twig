@@ -1,0 +1,11 @@
+{% if result == true %}
+    <p style="color: green">Добро пожаловать на сайт {{ name }}</p>
+{% endif %}
+
+{% for error in errors %}
+
+    <ul>
+        <li style="color: rosybrown">-{{ error }};</li>
+    </ul>
+
+{% endfor %}

@@ -1,0 +1,19 @@
+{
+  "name": "Booking",
+  "description": "site for finde hotel",
+  "main": "",
+  "authors": [
+    "Сушинская Оксана (Back-end dev) <sushinskaya.89@mail.ru>"
+  ],
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/h5bp/html5-boilerplate/blob/master/LICENSE.txt"
+  },
+  "homepage": "",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "backbone": "^1.3.3",
+	"font-awesome": "^4.6"
+  }
+}

@@ -1,0 +1,33 @@
+<form class="edit_form clearform" method="post" action="/cabinet/edit" enctype='multipart/form-data'>
+    <div class="modal-body">
+
+        <label>
+            <p>Введите Ваше новое имя:</p>
+            <input minlength="2" maxLength="20" name="name" value="{{ user.name }}" class="btn"
+                   placeholder="Введите Ваше имя" required>
+        </label>
+        <label>
+            <p>Введите текущий пароль:</p>
+            <input type="password" name="passwordold" value="" placeholder="Введите текущий  пароль" class="btn"
+                   id="" required>
+        </label>
+        <label>
+            <p>Введите новый пароль:</p>
+            <input type="password" name="passwordnew" value="" placeholder="Введите новый пароль" class="btn"
+                   id="passwordX" required>
+        </label>
+        <label>
+            <p>Подтвердите новый пароль:</p>
+            <input type="password" name="password" value="" placeholder="Подтвердите новый пароль" class="btn"
+                   id="passwordY" required>
+        </label>
+        <input value="{{user.avatar }}" type="file" src="{{user.avatar }}"  accept="image/jpeg,image/png,image/jpg" name="avatar"  >
+
+    </div>
+    <p class="notice4"></p>
+    <div class="modal-footer">
+        <input type="submit" name="submit" value="Cохранить">
+    </div>
+
+</form>
+

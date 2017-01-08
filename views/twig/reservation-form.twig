@@ -1,0 +1,61 @@
+<form class="reservation_form clearform" method="post" action="">
+    <div class="modal-body">
+
+        {% if session.user is defined %}
+
+            <label>
+                <p>Введите Ваш номер телефона:</p>
+                <input type="text" name="phone" class="btn" placeholder="Введите Ваш номер телефона" required>
+            </label>
+            <label>
+                <p>Дата заезда:</p>
+                <input type="date" name="date_arrival" placeholder="Дата заезда" class="btn"  required>
+            </label>
+            <label>
+                <p>Дата выезда:</p>
+                <input type="date" name="date_departure" placeholder="Дата выезда" class="btn" required>
+            </label>
+            <label>
+                <p>Оставьте свой комментарий:</p>
+                <textarea name="comment"></textarea>
+            </label>
+            <label>
+                 <input name="calend" id="your_name" type="hidden"/>
+            </label>
+        {% else %}
+
+            <label>
+                <p>Введите Ваше имя:</p>
+                <input type="text" name="name" class="btn" placeholder="Введите Ваше имя" required>
+            </label>
+            <label>
+                <p>Введите Ваш e-mail адрес:</p>
+                <input type="text" name="email" placeholder="example@mail.ru" class="btn" required>
+            </label>
+
+            <label>
+                <p>Введите Ваш номер телефона:</p>
+                <input type="text" name="phone" class="btn" placeholder="Введите Ваш номер телефона" required>
+            </label>
+            <label>
+                <p>Дата заезда:</p>
+                <input type="date" name="date_arrival" placeholder="Дата заезда" class="btn" required>
+            </label>
+            <label>
+                <p>Дата выезда:</p>
+                <input type="date" name="date_departure" placeholder="Дата выезда" class="btn" required>
+            </label>
+            <label>
+                <p>Оставьте свой комментарий:</p>
+                <textarea name="comment"></textarea>
+            </label>
+        {% endif %}
+
+    </div>
+    <p class="notice3"></p>
+    <div class="modal-footer">
+        <input type="submit" name="submit" value="Бронировать">
+    </div>
+
+
+</form>

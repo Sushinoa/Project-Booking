@@ -1,0 +1,235 @@
+{
+  "entities": {
+    "hotels": {
+      "id": "id_hotel",
+      "ipm" : "hotels",
+      "title": "Отели",
+      "url": "/api/hotels",
+      "img": "http://s1.iconbird.com/ico/2014/1/618/w128h1281390853631hotel128.png",
+      "pattern": "^\\S.*\\S$",
+      "minLength": 3,
+      "maxLength": 20,
+      "defaults": {
+        "id": "",
+        "title": "",
+        "date": ""
+      },
+      "grid": [
+        "img",
+        "title",
+        "attachment"
+      ],
+      "file_field_name": "image",
+      "editor": {
+        "title": {
+          "form": "input",
+          "name": "Название отеля",
+          "type": "text",
+          "max": 40
+        },
+        "stars": {
+          "form": "selectstars",
+          "name": "Количество звезд",
+          "type": "select",
+          "max": 5
+        },
+        "description": {
+          "form": "textarea",
+          "name": "Описание отеля",
+          "type": "text",
+          "max": 1000
+        },
+        "image": {
+          "form": "image",
+          "name": "Фото",
+          "type": "text"
+        }
+      }
+    },
+    "apartments": {
+      "id": "id_apartment",
+      "ipm" : "apartments",
+      "title": "Номера",
+      "url": "/api/apartments",
+      "img": "http://s1.iconbird.com/ico/2014/1/585/w128h1281390640440towel128.png",
+      "pattern": "^\\S.*\\S$",
+      "minLength": 3,
+      "maxLength": 20,
+      "defaults": {
+        "id": "id_apartment",
+        "title": "",
+        "date": "",
+        "price": "",
+        "size": "",
+        "type": ""
+      },
+      "grid": [
+        "title",
+        "attachment"
+      ],
+      "file_field_name": "foto",
+      "editor": {
+        "title": {
+          "form": "input",
+          "name": "Название номера",
+          "type": "text",
+          "max": 40
+        },
+        "type": {
+          "form": "input",
+          "name": "Тип номера",
+          "type": "text",
+          "max": 40
+        },
+        "size": {
+          "form": "input",
+          "name": "Количество комнат",
+          "type": "text",
+          "max": 2
+        },
+        "price": {
+          "form": "input",
+          "name": "Цена",
+          "type": "text",
+          "max": 5
+        },
+        "id_hotel": {
+          "form": "input",
+          "name": "ID отеля",
+          "type": "text",
+          "max": 5
+        },
+        "description": {
+          "form": "textarea",
+          "name": "Описание отеля",
+          "type": "text",
+          "max": 1000
+        },
+        "is_top": {
+          "form": "radio",
+          "name": "ТОП 8",
+          "type": "checkbox",
+          "max": 1
+        },
+        "foto": {
+          "form": "foto",
+          "name": "Фото",
+          "type": "text"
+        }
+      }
+    },
+    "users": {
+      "id": "id_user",
+      "ipm" : "users",
+      "title": "Пользователи",
+      "url": "api/users",
+      "img": "http://s1.iconbird.com/ico/2013/9/450/w256h2561380453931UserAccounts256x25632.png",
+      "avatar": "\\upload\\ava.png",
+      "pattern": "^\\S.*\\S$",
+      "defaults": {
+        "id": "id_user",
+        "name": "",
+        "email": ""
+      },
+      "grid": [
+        "title",
+        "attachment"
+      ],
+      "file_field_name": "avatar",
+      "editor": {
+        "name": {
+          "form": "input",
+          "name": "Имя пользователя",
+          "type": "text",
+          "max": 40
+        },
+        "email": {
+          "form": "email",
+          "name": "email пользователя",
+          "type": "text",
+          "max": 40
+        },
+        "password": {
+          "form": "input",
+          "name": "Пароль пользователя",
+          "type": "text",
+          "max": 40
+        },
+        "avatar": {
+          "form": "avatar",
+          "name": "Аватар пользователя",
+          "type": "text"
+        }
+      }
+    },
+    "requests": {
+      "id": "id_request",
+      "ipm" : "requests",
+      "title": "Заказы",
+      "url": "api/requests",
+      "img": "http://s1.iconbird.com/ico/0612/GooglePlusInterfaceIcons/w128h1281338911594list.png",
+      "pattern": "^\\S.*\\S$",
+      "defaults": {
+        "id": "id_request",
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "grid": [
+        "title",
+        "attachment"
+      ],
+      "editor": {
+        "name": {
+          "form": "input",
+          "name": "Имя заказчика",
+          "type": "text",
+          "max": 40
+        },
+        "is_approved": {
+            "form": "radio",
+            "name": "Выполнение заказа",
+            "type": "text",
+            "max": 1
+        },
+        "date_arrival": {
+          "form": "date",
+          "name": "Дата заезда",
+          "type": "text",
+          "max": 10
+        },
+        "date_departure": {
+          "form": "date",
+          "name": "Дата выезда",
+          "type": "text",
+          "max": 10
+        },
+        "email": {
+          "form": "input",
+          "name": "email к заказу",
+          "type": "text",
+          "max": 40
+        },
+        "phone": {
+          "form": "input",
+          "name": "Тел. номер заказчика",
+          "type": "text",
+          "max": 20
+        },
+        "id_apartment": {
+          "form": "input",
+          "name": "ID номера",
+          "type": "text",
+          "max": 5
+        },
+        "comment": {
+          "form": "textarea",
+          "name": "Комментарий",
+          "type": "text",
+          "max": 1000
+        }
+      }
+    }
+  }
+}
+

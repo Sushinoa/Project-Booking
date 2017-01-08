@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking</title>
+    <link rel="stylesheet" href="../../src/css/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="../../src/css/main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png">
+</head>
+<body>
+<header>
+    <a href="/">
+        <div><img src="../../images/logo2.png"></div>
+    </a>
+    {% if session.user is defined %}
+        <div class="avatar">
+            <div class="avatarimg">
+                <img class="img-circle" src="{{ session.avatar }}">
+            </div>
+            <div class="user">
+                {{ session.name }}
+            </div>
+        </div>
+        <div class="buttons">
+
+            <!--Начало Кнопка Аккаунт-->
+            <a href="/cabinet">
+                <button class="btn btn-info btn-lg" value="123">Аккаунт</button>
+            </a>
+            <a href="/user/logout">
+                <button id="pwd" class="btn btn-info btn-lg">Выйти</button>
+            </a>
+        </div>
+        <!--Конец Кнопка Выход-->
+    {% else %}
+        <div class="buttons">
+            <!--Начало Кнопка Вход-->
+            <a href="#modal_login" class="open_modal">
+                <button class="btn btn-info btn-lg" value="123">Войти</button>
+            </a>
+            <a href="#modal_pwd" class="open_modal">
+                <button id="pwd" class="btn btn-info btn-lg">Регистрация</button>
+            </a>
+            <!--Конец Кнопка Вход-->
+
+        </div>
+    {% endif %}
+</header>
+<div>
+
+</div>
+<nav>
+    <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li id="btn1"><a href="/">Домой</a></li>
+            <li id="btn2"><a href="/hotels/page1">Отели</a></li>
+        </ul>
+    </div>
+    {#<div class="tabbable">#}
+    {#<ul class="nav nav-tabs">#}
+    {#<li id="btn1" class="active"><a href="/" data-toggle="tab">Домой</a></li>#}
+    {#<li id="btn2"><a href="/hotels/page1" data-toggle="tab">Отели</a></li>#}
+    {#</ul>#}
+    {#<div class="tab-content">#}
+    {#<div class="tab-pane active" id="/">#}
+    {#</div>#}
+    {#<div class="tab-pane" id="/hotels/page1">#}
+    {#</div>#}
+    {#</div>#}
+    {#</div>#}
+
+</nav>
+<main id="content">
+
+    {% block hotelID %}{% endblock %}
+    {% block room %} {% endblock %}
+    {% block hotels %} {% endblock %}
+    {% block home %} {% endblock %}
+
+</main>
+<footer>
+    <div></div>
+    <img src="../../images/MerryChristmas.jpg" name="snowbutton" TYPE="button" onclick="$('body').snowFall();"
+         title="MerryChristmas" class="snowbutton">
+    {#<div>#}
+    {#<h2>© SunNY</h2>#}
+    {#</div>#}
+    <div class="ver">
+        ver 9.0
+    </div>
+</footer>
+
+<!--НАЧАЛО МОДАЛЬНЫЕ ОКНА-->
+<!--Модальное Вход-->
+
+<div id="modal_login" class="modal modal_div log">
+
+    <span class="modal_close" data-dismiss="modal">X</span>
+    <div class="modal-header">
+        <h4 class="modal-title">Войти</h4>
+    </div>
+    {% include 'login-form.twig' %}
+</div>
+<!--Модальное Регистрация-->
+<div id="modal_pwd" class="modal_div join">
+    <span class="modal_close">X</span>
+    <div class="modal-header">
+        <h4 class="modal-title">Регистрация</h4>
+    </div>
+    {% include 'join-form.twig' %}
+
+</div>
+
+<!--Модальное Бронирование -->
+<div id="modal_orderX" class="modal_div reservation reserv">
+    <span class="modal_close">X</span>
+    <div class="modal-header">
+        <h4 class="modal-title">Бронировать номер</h4>
+    </div>
+    {% include 'reservation-form.twig' %}
+</div>
+
+<!-- Пoдлoжкa, oднa нa всю стрaницу -->
+<div id="overlay"></div>
+<!--КОНЕЦ МОДАЛЬНЫЕ ОКНА-->
+
+<script src="../../src/js/libs/jquery-2.2.4.js"></script>
+<script src="../../src/js/libs/underscore.js"></script>
+<script src="../../src/js/libs/bootstrap.min.js"></script>
+<script src="../../src/js/libs/backbone.js"></script>
+<script src="../../src/js/main.js"></script>
+<script src="../../src/js/data.js"></script>
+<script src="../../src/js/app.js"></script>
+<script src="../../src/js/routes/NavyRoute.js"></script>
+<script src="../../src/js/run.js"></script>
+<script src="/src/js/snow.js"></script>
+
+<div class="alert"></div>
+
+</body>
+
+</html>

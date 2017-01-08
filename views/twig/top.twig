@@ -1,0 +1,18 @@
+{% for apartment in roomList %}
+
+    <div class="thumbnail">
+        <a href="/hotels/room/id{{ apartment.id_apartment }}" id="btn4">
+            <h4>{{ apartment.title }}</h4>
+            <h4>{{ apartment.type }}</h4>
+            <img src="{{ apartment.foto }}" alt="Foto room">
+            <h4>{{ apartment.price }}₴</h4>
+        </a>
+
+        <a href="#modal_orderX" class="open_modal">
+            <button class="orderID btn open_modal" value="/order/add/id{{ apartment.id_apartment }}">Заказать</button>
+        </a>
+
+    </div>
+
+{% endfor %}
+
