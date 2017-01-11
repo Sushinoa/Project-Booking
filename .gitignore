@@ -6,4 +6,4 @@ node_modules
 dist
 bower_components
 vendor
-
+src/js/libs
